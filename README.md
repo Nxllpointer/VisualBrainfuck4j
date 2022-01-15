@@ -2,7 +2,7 @@
 
 A brainfuck interpreter that lets you see the live code execution
 
-![showcase.png](showcase.png)
+![showcase.png](showcase.gif)
 
 ## Usage
 

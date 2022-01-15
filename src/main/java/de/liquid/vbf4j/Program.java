@@ -109,11 +109,6 @@ public class Program {
 
             } else {
 
-//                if (readerPosition == code.length() - 1) {
-//                    running = false;
-//                    return;
-//                }
-
                 moveReaderForwards();
                 if (!running) return;
 

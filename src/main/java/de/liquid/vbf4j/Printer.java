@@ -18,7 +18,7 @@ public class Printer {
 
         if (!program.visual) return;
 
-        String outputString = "\n".repeat(100);
+        String outputString = StringUtils.repeat("\n", 100);
         outputString += Ansi.ansi().fgBrightBlue().a("VisualBrainfuck4j").reset();
         outputString += "\n\n";
         outputString += renderProgramOutput();
@@ -69,7 +69,7 @@ public class Printer {
 
         StringBuilder renderedString = new StringBuilder();
 
-        renderedString.append("-OUTPUT").append("-".repeat(programOutputArray[0].length + 2 - 7)).append("\n");
+        renderedString.append("-OUTPUT").append(StringUtils.repeat("-", programOutputArray[0].length + 2 - 7)).append("\n");
 
         for (char[] chararray : programOutputArray) {
             renderedString
@@ -78,7 +78,7 @@ public class Printer {
                     .append("|\n");
         }
 
-        renderedString.append("-".repeat(programOutputArray[0].length + 2)).append("\n");
+        renderedString.append(StringUtils.repeat("-", programOutputArray[0].length + 2)).append("\n");
 
         return renderedString.toString();
 
@@ -113,7 +113,7 @@ public class Printer {
 
                 int minSize = 4 + Math.max((String.valueOf(i)).length(), String.valueOf(memoryData).length());
 
-                cellSide = "-".repeat(minSize);
+                cellSide = StringUtils.repeat("-", minSize);
                 cellMid = "|" + centerString(String.valueOf(memoryData), minSize - 2) + "|";
                 cellSub = centerString(String.valueOf(i), minSize);
             }
@@ -144,7 +144,7 @@ public class Printer {
         int spacesBefore = (int) (spacesNeeded / 2D);
         int spacesAfter = spacesNeeded - spacesBefore;
 
-        return " ".repeat(spacesBefore) + s + " ".repeat(spacesAfter);
+        return StringUtils.repeat(" ", spacesBefore) + s + StringUtils.repeat(" ", spacesAfter);
 
     }
 
@@ -172,7 +172,7 @@ public class Printer {
 
             if (thisLineNumber >= 0 && thisLineNumber < codeLines.length) {
 
-                String thisLineNumberDisplay = " ".repeat(String.valueOf(codeLines.length).length() - String.valueOf(thisLineNumber).length()) + thisLineNumber;
+                String thisLineNumberDisplay = StringUtils.repeat(" ", String.valueOf(codeLines.length).length() - String.valueOf(thisLineNumber).length()) + thisLineNumber;
 
                 codeOutput[i] = (i == 3 ?
                         Ansi.ansi().fgBrightMagenta().a(thisLineNumberDisplay + " -> ").reset().toString()

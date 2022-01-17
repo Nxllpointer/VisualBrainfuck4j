@@ -4,6 +4,12 @@ A brainfuck interpreter that lets you see the live code execution
 
 ![showcase.png](showcase.gif)
 
+If you are on Windows and see weird charachters instead of colors this command should fix it:
+
+`REG ADD HKCU\CONSOLE /f /v VirtualTerminalLevel /t REG_DWORD /d 1`
+
+You have to restart your terminal.
+
 ## Usage
 
 ```
